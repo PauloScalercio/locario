@@ -1,12 +1,14 @@
 <div class="bg-white border" *ngIf="(photo$ | async) as photo">
     <div class="row">
-        <div class="col-lg-8">
+        <div class="col-lg-6">
+            <div class="text-center mt-4">
             <ap-photo [url]="photo.url" [description]="photo.description"></ap-photo>
+            </div>
         </div>
 
-        <div class="col-lg-4 p-4">
+        <div class="col-lg-6 p-4">
+            <p id="description" class="text-left break-word">{{ photo.description }}</p>
             <small>
-                <p class="text-left break-word">{{ photo.description }}</p>
                 <div class="text-left mb-4">
                     <i (click)="like(photo)" showIfLogged class="fa fa-heart-o fa-2x mr-2 pull-left">
                         {{ photo.likes }}
