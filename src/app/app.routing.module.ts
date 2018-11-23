@@ -7,6 +7,7 @@ import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { PhotoListResolver } from './photos/photo-list/photo-list.resolver';
 import { AuthGuard } from './core/auth/auth.guard';
 import { PhotoDetailsComponent } from './photos/photo-details/photo-details.component';
+import { PayComponent } from './payment/pay/pay.component';
 
 const routes: Routes = [
     {
@@ -42,6 +43,10 @@ const routes: Routes = [
     { 
         path: '**', 
         redirectTo: 'not-found'
+    },  
+    { 
+        path: 'p/pay', 
+        component : PayComponent
     }  
 ];
 

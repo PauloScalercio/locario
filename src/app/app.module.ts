@@ -6,6 +6,7 @@ import { PhotosModule } from './photos/photos.module';
 import { AppRoutingModule } from './app.routing.module';
 import { ErrorsModule } from './errors/errors.module';
 import { CoreModule } from './core/core.module';
+import { PaymentModule } from './payment/payment.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { CoreModule } from './core/core.module';
     BrowserModule,
     PhotosModule,
     ErrorsModule,
+    PaymentModule,
     CoreModule,
     AppRoutingModule,
   ],

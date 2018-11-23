@@ -7,6 +7,10 @@ import { switchMap, tap } from 'rxjs/operators';
 
 import { PhotoService } from "../../photo/photo.service";
 import { PhotoComment } from "../../photo/photo-comment";
+import { AlertService } from "../../../shared/components/alert/alert.service";
+import { ActivatedRoute, Router } from "@angular/router";
+
+
 
 @Component({
     selector: 'ap-photo-comments',
@@ -22,7 +26,9 @@ export class PhotoCommentsComponent implements OnInit {
 
     constructor(
         private photoService: PhotoService,
-        private formBuilder: FormBuilder
+        private formBuilder: FormBuilder,
+        private alertService: AlertService,
+        private router: Router
     ) {}
 
     ngOnInit(): void {
@@ -40,5 +46,12 @@ export class PhotoCommentsComponent implements OnInit {
             .pipe(tap(() => {
                 this.commentForm.reset();
             }));
+    }
+
+    pay(){
+
+        this.alertService.info("Você será redirecionado para o pagamento em instantes", true);
+        this.router.navigate(['p/pay']);
+        
     }
 }

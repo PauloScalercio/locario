@@ -21,12 +21,19 @@
                         class="btn btn-primary pull-left">
                             Publish
                     </button>
+                    
                 </div>
             </div>
+                   
             <ap-vmessage 
                 text="Maximun size allowed is 300" 
                 *ngIf="commentForm.get('comment').errors?.maxlength">
             </ap-vmessage>            
         </form>
     </div>    
+    <button id="rent" class="col-lg-3" 
+class="btn btn-danger btn-lg mt-4 mb-2"
+[routerLink]="['p/pay']" (click)="pay()">
+Rent
+</button>
 </div>

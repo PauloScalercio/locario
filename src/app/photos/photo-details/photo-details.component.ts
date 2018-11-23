@@ -10,7 +10,8 @@ import { AlertService } from "../../shared/components/alert/alert.service";
 import { UserService } from "../../core/user/user.service";
 
 @Component({
-    templateUrl: './photo-details.component.html'
+    templateUrl: './photo-details.component.html',
+    styleUrls:['photo-details.css']
 })
 export class PhotoDetailsComponent implements OnInit { 
 

@@ -18,4 +18,18 @@
 <body>
     <app-root></app-root>
 </body>
+<script src="https://stc.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.directpayment.js">
+
+</script>
+<script>
+
+  xhr = new XMLHttpRequest();
+  xhr.open('POST', 'https://ws.pagseguro.uol.com.br/v2/sessions/?7FE25FF8A57C49D68A6D97BDAAD650B1');
+  xhr.setRequestHeader("Content-type", "application/xml");
+  xhr.send();
+  xhr.addEventListener('load', function(){
+    response = xhr.response;
+    console.log(response)
+  });
+</script>
 </html>
