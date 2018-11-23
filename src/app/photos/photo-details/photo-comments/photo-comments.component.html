@@ -30,13 +30,9 @@
                 *ngIf="commentForm.get('comment').errors?.maxlength">
             </ap-vmessage>            
         </form>
-        <button id="rent" class="btn btn-success btn-lg" [routerLink]="['']">
-                            Rent
-        </button>
     </div>    
     <button id="rent" class="col-lg-3" 
-class="btn btn-danger btn-lg mt-4 mb-2"
-[routerLink]="['p/pay']" (click)="pay()">
+class="btn btn-danger btn-lg mt-4 mb-2" (click)="pay()">
 Rent
 </button>
 </div>

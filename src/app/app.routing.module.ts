@@ -33,6 +33,10 @@ const routes: Routes = [
         canActivate: [AuthGuard]
     },
     { 
+        path: 'p/pay', 
+        component : PayComponent
+    }, 
+    { 
         path: 'p/:photoId', 
         component: PhotoDetailsComponent,
     }, 
@@ -44,10 +48,7 @@ const routes: Routes = [
         path: '**', 
         redirectTo: 'not-found'
     },  
-    { 
-        path: 'p/pay', 
-        component : PayComponent
-    }  
+     
 ];
 
 @NgModule({
