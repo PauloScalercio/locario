@@ -1,7 +1,7 @@
 <header class="fixed-top">
     <title>LOCARIO</title>
     <nav class="navbar navbar-light bg-white">
-        <a class="navbar-brand">LOCARIO</a>
+        <a class="navbar-brand" [routerLink]="['']">LOCARIO</a>
 
         <div *ngIf="(user$ | async) as user; else login">
             <i class="fa fa-user-circle mr-1"></i>
