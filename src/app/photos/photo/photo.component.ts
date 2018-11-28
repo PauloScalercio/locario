@@ -10,6 +10,8 @@ export class PhotoComponent {
     
     private _url = '';
 
+    @Input() classes='';
+
     @Input() description='';
     
     @Input() set url(url: string)  {

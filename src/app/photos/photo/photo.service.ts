@@ -28,9 +28,10 @@ export class PhotoService {
             .get<Photo[]>(API + '/' + userName + '/photos', { params });       
     } 
     
-    upload(description: string, allowComments: boolean, file: File) {
+    upload(title: string, description: string, allowComments: boolean, file: File) {
         
         const formData = new FormData();
+        formData.append('title', title);
         formData.append('description', description);
         formData.append('allowComments', allowComments ? 'true' : 'false');
         formData.append('imageFile', file);

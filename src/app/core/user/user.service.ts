@@ -3,14 +3,20 @@ import { TokenService } from '../token/token.service';
 import { BehaviorSubject } from 'rxjs';
 import { User } from './user';
 import * as jtw_decode from 'jwt-decode';
+import { HttpClient } from '@angular/common/http';
+
+const API_URL = 'http://localhost:3000';
 
 @Injectable({ providedIn: 'root'})
 export class UserService { 
 
+    
     private userSubject = new BehaviorSubject<User>(null);
     private userName: string;
 
-    constructor(private tokenService: TokenService) { 
+    constructor(
+        private http: HttpClient,
+        private tokenService: TokenService) { 
 
         this.tokenService.hasToken() && 
             this.decodeAndNotify();
@@ -35,6 +41,13 @@ export class UserService {
     logout() {
         this.tokenService.removeToken();
         this.userSubject.next(null);
+    }
+
+    deactive(userName) {
+        return this.http
+                    .patch(
+                        API_URL + `/user/deactive/${userName}`, {}
+                    );
     }
 
     isLogged() {

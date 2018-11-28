@@ -28,15 +28,17 @@ export class PhotoFormComponent implements OnInit {
     this.photoForm = this.formBuilder.group({
       file: ['', Validators.required],
       description: ['', Validators.maxLength(300)],
+      title:['', Validators.compose([Validators.required, Validators.maxLength(30)])],
       allowComments: [true]
     })
   }
 
   upload() {
+    const title = this.photoForm.get('title').value;
     const description = this.photoForm.get('description').value;
     const allowComments = this.photoForm.get('allowComments').value;
     this.photoService
-      .upload(description, allowComments, this.file)
+      .upload(title, description, allowComments, this.file)
       .subscribe(() => {
         this.alertService.success('Upload complete', true);
         this.router.navigate(['/user', this.userService.getUserName()]);

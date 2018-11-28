@@ -3,6 +3,7 @@ import { UserService } from '../user/user.service';
 import { Observable } from 'rxjs';
 import { User } from '../user/user';
 import { Router } from '@angular/router';
+import { AlertService } from '../../shared/components/alert/alert.service';
 
 @Component({
     selector: 'ap-header',
@@ -14,7 +15,9 @@ export class HeaderComponent {
 
     constructor(
         private userService: UserService, 
-        private router:Router) {
+        private router:Router,
+        private alertService: AlertService,
+    ) {
 
         this.user$ = userService.getUser();
     }
@@ -22,5 +25,17 @@ export class HeaderComponent {
     logout() {
         this.userService.logout();
         this.router.navigate(['']);
+    }
+
+    deactive(userName){
+        console.log(userName);
+        this.userService
+            .deactive(userName)
+            .subscribe(()=> {
+                this.logout();
+            this.alertService.info("Você desativou sua conta :(", true);
+                
+            });
+        
     }
 }

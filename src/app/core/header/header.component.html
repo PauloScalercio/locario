@@ -7,7 +7,7 @@
             <i class="fa fa-user-circle mr-1"></i>
             <a class="mr-1">{{ user.name}}</a>
             <a (click)="logout()">(Logout)</a>
-            <a (click)="logout()">(Deactivate)</a>
+            <a (click)="deactive(user.name)">(Deactivate)</a>
         </div>
 
         <ng-template #login>

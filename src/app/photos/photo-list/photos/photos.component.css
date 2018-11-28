@@ -1,0 +1,13 @@
+.tamanho-produto{
+    min-height: 150px !important;
+    max-height: 150px !important;
+
+}  
+
+p{
+    font-size: 40px;
+    margin-top:40px;
+}
+.no-decoration{
+    text-decoration: none;
+}
