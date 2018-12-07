@@ -38,4 +38,9 @@ export class HeaderComponent {
             });
         
     }
+
+    profile(userName){
+        console.log(userName)
+        this.router.navigate([`user/${userName}/profile`]);
+    }
 }

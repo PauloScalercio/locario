@@ -13,13 +13,14 @@ import {
   GoogleLoginProvider,
   FacebookLoginProvider,
 } from "angular-6-social-login";
+import { ProfileModule } from './profile/profile.module';
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
       [
         {
           id: GoogleLoginProvider.PROVIDER_ID,
-          provider: new GoogleLoginProvider("CLIENT-ID")
+          provider: new GoogleLoginProvider("1026783199163-2jtpab6j1qvtrrfu7oqo8qrv9j1fihjc.apps.googleusercontent.com")
         }
          
       ]
@@ -34,6 +35,7 @@ export function getAuthServiceConfigs() {
   imports: [
     BrowserModule,
     PhotosModule,
+    ProfileModule,
     ErrorsModule,
     PaymentModule,
     CoreModule,

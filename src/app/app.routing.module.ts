@@ -8,6 +8,7 @@ import { PhotoListResolver } from './photos/photo-list/photo-list.resolver';
 import { AuthGuard } from './core/auth/auth.guard';
 import { PhotoDetailsComponent } from './photos/photo-details/photo-details.component';
 import { PayComponent } from './payment/pay/pay.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
     {
@@ -18,7 +19,20 @@ const routes: Routes = [
     { 
         path: 'home',
         loadChildren: './home/home.module#HomeModule'
-    },              
+    },
+    { 
+        path: 'all', 
+        pathMatch: 'full',
+        component: PhotoListComponent,
+        resolve: {
+            photos: PhotoListResolver
+        }
+    },       
+    { 
+        path: 'user/:userName/profile', 
+        pathMatch: 'full',
+        component: ProfileComponent
+    },       
     { 
         path: 'user/:userName', 
         pathMatch: 'full',

@@ -13,11 +13,20 @@ const API = environment.ApiUrl;
 @Injectable({ providedIn: 'root' })
 export class PhotoService {
 
+    
     constructor(private http: HttpClient) {}
 
     listFromUser(userName: string) {
         return this.http
             .get<Photo[]>(API + '/' + userName + '/photos');       
+    }
+
+    listAllPaginated(page: number) {
+        const params = new HttpParams()
+            .append('page', page.toString());
+
+        return this.http
+            .get<Photo[]>(API + '/photos', { params });
     }
 
     listFromUserPaginated(userName: string, page: number) {
