@@ -3,7 +3,7 @@
         <div class="col-lg-6">
             <div class="text-center mt-4">
                 
-                <ap-photo [url]="photo.url" [description]="photo.description"></ap-photo>
+                <ap-photo *ngIf="photo.url" [url]="photo.url"></ap-photo>
                 <p>{{ photo.title }}</p>
             </div>
         </div>

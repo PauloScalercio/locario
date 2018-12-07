@@ -7,6 +7,25 @@ import { AppRoutingModule } from './app.routing.module';
 import { ErrorsModule } from './errors/errors.module';
 import { CoreModule } from './core/core.module';
 import { PaymentModule } from './payment/payment.module';
+import {
+  SocialLoginModule,
+  AuthServiceConfig,
+  GoogleLoginProvider,
+  FacebookLoginProvider,
+} from "angular-6-social-login";
+
+export function getAuthServiceConfigs() {
+  let config = new AuthServiceConfig(
+      [
+        {
+          id: GoogleLoginProvider.PROVIDER_ID,
+          provider: new GoogleLoginProvider("CLIENT-ID")
+        }
+         
+      ]
+  );
+  return config;
+}
 
 @NgModule({
   declarations: [
@@ -19,8 +38,14 @@ import { PaymentModule } from './payment/payment.module';
     PaymentModule,
     CoreModule,
     AppRoutingModule,
+    SocialLoginModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: AuthServiceConfig,
+      useFactory: getAuthServiceConfigs
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
