@@ -22,6 +22,8 @@ Execute os mesmos comandos na pasta da API.
 
 Projeto desenvolvido em ANGUALR e NodeJS.
 
-Produzido durante com conhecimentos da Caelum
+Produzido durante com conhecimentos da Caelum.
+
+Créditos à Flávio Almeida, Paulo Scalercio e Gabriel Leite.
 
 
