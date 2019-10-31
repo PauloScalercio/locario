@@ -20,6 +20,8 @@ Baixe-a <a href="https://drive.google.com/open?id=1IV9oy8hIc2Zi63KZpnoCQrdp5WVTh
 
 Execute os mesmos comandos na pasta da API.
 
-Projeto desenvolvido em ANGUALR e NodeJS
+Projeto desenvolvido em ANGUALR e NodeJS.
+
+Produzido durante com conhecimentos da Caelum
 
 
